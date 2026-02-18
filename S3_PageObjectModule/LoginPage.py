@@ -8,6 +8,7 @@ class SwagLabLoginPage:
     username="//input[@name='user-name']"
     password="//input[@name='password']"
     login="//input[@name='login-button']"
+    errorMsg="//h3[contains(text(),'Username and password do not match')]"
 
 
     #2: initialization of webdriver object within constructor
@@ -24,3 +25,7 @@ class SwagLabLoginPage:
 
     def clickOnLoginBtn(self):
         self.driver.find_element(By.XPATH,self.login).click()
+
+    def getLoginFailedErrorMsg(self):
+        actErrorMSg=self.driver.find_element(By.XPATH,self.errorMsg).text
+        return actErrorMSg

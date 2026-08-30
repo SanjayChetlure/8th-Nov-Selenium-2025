@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 driver=webdriver.Chrome()
-driver.get("file:///D:/8th%20Nov%20Python%20Automation/Html%20Code/WebTable.html")
+driver.get("file:///D:/Python/Workspace/8thNov_Selenium/Html%20Files/WebTable.html")
 
 time.sleep(2)
 

@@ -12,7 +12,6 @@ for link in allLinks:
 
     if url is None or url == "":
         continue
-
     try:
         response = requests.get(url)
         if response.status_code >= 400:

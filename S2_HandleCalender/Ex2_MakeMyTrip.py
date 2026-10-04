@@ -8,7 +8,7 @@ import time
 driver = webdriver.Chrome()
 driver.maximize_window()
 driver.get("https://www.makemytrip.com/")
-time.sleep(3)
+time.sleep(9)
 
 # close login popup (important step)
 driver.find_element(By.XPATH, "//span[@class='commonModal__close']").click()
@@ -18,7 +18,7 @@ time.sleep(3)
 driver.find_element(By.XPATH, "//label[@for='departure']").click()
 time.sleep(3)
 
-target_month = "July 2026"
+target_month = "July 2027"
 target_day = "15"
 
 # loop until desired month appears
@@ -32,14 +32,15 @@ while True:
     time.sleep(1)
 
 # select date
-allDates = driver.find_elements(By.XPATH, "//p[@class='dateInnerCell']")
 time.sleep(3)
+allDates = driver.find_elements(By.XPATH, "//div[@class='dateInnerCell']")
+
 
 for date in allDates:
     if date.text == target_day:
         date.click()
         break
-    time.sleep(1)
+    time.sleep(0.2)
 
 time.sleep(10)
 driver.quit()
